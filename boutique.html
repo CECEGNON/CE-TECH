@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique | CE-TECH — Matériel Informatique au Burkina Faso</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="CE-TECH Logo">
+            <span class="logo-text">CE<span>-</span>TECH</span>
+        </div>
+        <button class="menu-toggle" id="mobile-menu" aria-label="Menu">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="boutique.html" class="active">Boutique</a>
+            <a href="services.html">Nos Services</a>
+            <a href="apropos.html">À Propos</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-cta">
+            <a href="https://wa.me/22661198912" target="_blank" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Commander direct
+            </a>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         BANNIÈRE BOUTIQUE
+         ============================================================ -->
+    <section class="shop-banner">
+        <div class="shop-banner-content">
+            <span class="section-label" style="margin-bottom:20px;">Notre catalogue</span>
+            <h1>Équipez-vous avec le meilleur<br>de la technologie</h1>
+            <p>Performance, durabilité et puissance — trouvez l'outil idéal pour vos projets professionnels.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         BARRE DE RECHERCHE — placée juste après .shop-banner
+         ============================================================ -->
+    <section class="search-section">
+        <div class="search-wrapper">
+            <div class="search-field">
+                <i class="fas fa-search search-icon"></i>
+                <input
+                    type="text"
+                    id="product-search"
+                    placeholder="Rechercher un produit, une marque, une référence…"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+                <button class="search-clear" id="search-clear" aria-label="Effacer la recherche">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-tags">
+                <span class="search-hint">Recherche rapide :</span>
+                <button class="search-tag" data-query="HP">HP</button>
+                <button class="search-tag" data-query="Dell">Dell</button>
+                <button class="search-tag" data-query="Lenovo">Lenovo</button>
+                <button class="search-tag" data-query="Portable">Portables</button>
+                <button class="search-tag" data-query="Bureau">Bureau</button>
+                <button class="search-tag" data-query="i7">Core i7</button>
+                <button class="search-tag" data-query="Disque">Disques</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CONTENU BOUTIQUE — Sidebar + Grille
+         ============================================================ -->
+    <section class="shop-container">
+
+        <!-- SIDEBAR -->
+        <aside class="shop-sidebar">
+            <h3>Catégories</h3>
+
+            <ul class="filter-tags" id="category-list">
+
+                <li class="filter-item">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th-large filter-icon"></i>
+                        <span class="filter-label">Tout voir</span>
+                    </button>
+                </li>
+
+                <li class="filter-item">
+                    <button class="filter-btn" data-filter="laptops">
+                        <i class="fas fa-laptop filter-icon"></i>
+                        <span class="filter-label">Ordinateurs Portables</span>
+                        <i class="fas fa-chevron-down filter-arrow"></i>
+                    </button>
+                    <div class="brand-panel" id="panel-laptops">
+                        <button class="brand-btn active" data-brand="all">
+                            <span class="brand-dot"></span>Toutes les marques
+                        </button>
+                        <button class="brand-btn" data-brand="hp">
+                            <span class="brand-dot"></span>HP
+                        </button>
+                        <button class="brand-btn" data-brand="dell">
+                            <span class="brand-dot"></span>Dell
+                        </button>
+                        <button class="brand-btn" data-brand="lenovo">
+                            <span class="brand-dot"></span>Lenovo
+                        </button>
+                    </div>
+                </li>
+
+                <li class="filter-item">
+                    <button class="filter-btn" data-filter="desktops">
+                        <i class="fas fa-desktop filter-icon"></i>
+                        <span class="filter-label">Ordinateurs de Bureau</span>
+                        <i class="fas fa-chevron-down filter-arrow"></i>
+                    </button>
+                    <div class="brand-panel" id="panel-desktops">
+                        <button class="brand-btn active" data-brand="all">
+                            <span class="brand-dot"></span>Toutes les marques
+                        </button>
+                        <button class="brand-btn" data-brand="hp">
+                            <span class="brand-dot"></span>HP
+                        </button>
+                        <button class="brand-btn" data-brand="dell">
+                            <span class="brand-dot"></span>Dell
+                        </button>
+                        <button class="brand-btn" data-brand="lenovo">
+                            <span class="brand-dot"></span>Lenovo
+                        </button>
+                    </div>
+                </li>
+
+                <li class="filter-item">
+                    <button class="filter-btn" data-filter="accessoires">
+                        <i class="fas fa-hdd filter-icon"></i>
+                        <span class="filter-label">Accessoires</span>
+                        <i class="fas fa-chevron-down filter-arrow"></i>
+                    </button>
+                    <div class="brand-panel" id="panel-accessoires">
+                        <button class="brand-btn active" data-brand="all">
+                            <span class="brand-dot"></span>Tous les accessoires
+                        </button>
+                        <button class="brand-btn" data-brand="imprimante-scanner">
+                            <span class="brand-dot"></span>Imprimantes & Scanners
+                        </button>
+                        <button class="brand-btn" data-brand="saisie-controle">
+                            <span class="brand-dot"></span>Saisie & Contrôle
+                        </button>
+                        <button class="brand-btn" data-brand="affichage-multimedia">
+                            <span class="brand-dot"></span>Affichage & Multimédia
+                        </button>
+                        <button class="brand-btn" data-brand="stockage-connectivite">
+                            <span class="brand-dot"></span>Stockage & Connectivité
+                        </button>
+                        <button class="brand-btn" data-brand="energie-alimentation">
+                            <span class="brand-dot"></span>Énergie & Alimentation
+                        </button>
+                        <button class="brand-btn" data-brand="divers">
+                            <span class="brand-dot"></span>Divers
+                        </button>
+                    </div>
+                </li>
+
+                <li class="filter-item">
+                    <button class="filter-btn" data-filter="consommables">
+                        <i class="fas fa-print filter-icon"></i>
+                        <span class="filter-label">Consommables</span>
+                        <i class="fas fa-chevron-down filter-arrow"></i>
+                    </button>
+                    <div class="brand-panel" id="panel-consommables">
+                        <button class="brand-btn active" data-brand="all">
+                            <span class="brand-dot"></span>Tous les consommables
+                        </button>
+                        <button class="brand-btn" data-brand="impression">
+                            <span class="brand-dot"></span>Impression
+                        </button>
+                        <button class="brand-btn" data-brand="papiers-supports">
+                            <span class="brand-dot"></span>Papiers & Supports
+                        </button>
+                        <button class="brand-btn" data-brand="composants">
+                            <span class="brand-dot"></span>Composants
+                        </button>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="sidebar-help">
+                <i class="fas fa-headset"></i>
+                <h4>Besoin d'un conseil ?</h4>
+                <p>Nos experts vous orientent vers la machine idéale selon votre budget et vos usages.</p>
+                <a href="https://wa.me/22661198912" target="_blank">Discuter sur WhatsApp</a>
+            </div>
+        </aside>
+
+        <!-- GRILLE PRODUITS -->
+        <main class="products-grid-container">
+
+            <div class="results-bar">
+                <p class="results-count">
+                    <strong id="results-num">14</strong> produit(s) affiché(s)
+                </p>
+                <div class="active-filters" id="active-filters-display"></div>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+
+                <!-- ═══════════════════════════════════════════
+                     LAPTOPS — HP
+                     ═══════════════════════════════════════════ -->
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/hp-elitebook-850.jpg -->
+                <div class="product-card" data-category="laptops" data-brand="hp">
+                    <div class="product-badge">Top Vente</div>
+                    <div class="product-img">
+                        <img src="images/PC/Hp-p1.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:var(--blue-light)"></i>HP</span>
+                        <span class="product-cat">Ordinateur Portable</span>
+                        <h3 class="product-title">HP EliteBook 850 G5</h3>
+                        <p class="product-desc">Processeur Intel Core i5 ou i7, jusqu'à 16 Go de RAM, SSD NVMe rapide et écran 15.6" Full HD IPS.Ports USB-C (Thunderbolt), HDMI, RJ45 et lecteur d'empreintes digitales. <br>Un châssis ultra-fin et élégant en aluminium qui garantit une excellente robustesse au quotidien.Une sécurité de niveau professionnel avec un clavier très confortable et un son Bang & Olufsen.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20HP%20EliteBook%20850%20G5" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/hp-elitebook-840-g10.jpg -->
+                <div class="product-card" data-category="laptops" data-brand="hp">
+                    <div class="product-img">
+                        <img src="images/PC/Hp-p2.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:var(--blue-light)"></i>HP</span>
+                        <span class="product-cat">Ordinateur Portable</span>
+                        <h3 class="product-title">HP EliteBook 1040 G7 x360</h3>
+                        <p class="product-desc">Processeur Intel Core i7 de 10e génération avec jusqu'à 32 Go de RAM et un SSD ultrarapide, Écran tactile 14" inclinable à 360°, le tout dans un châssis en aluminium fin et lé<br>Conception convertible ultra-polyvalente idéale pour les professionnels nomades en quête de mobilité.Sécurité renforcée (HP Sure View), autonomie exceptionnelle et qualité audio premium signée Bang & Olufsen.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20HP%20EliteBook%20840%20G10" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                                <!-- Remplacer src par le chemin de votre image, ex: images/hp-elitebook-840-g10.jpg -->
+                <div class="product-card" data-category="laptops" data-brand="hp">
+                    <div class="product-img">
+                        <img src="images/PC/Hp-p3.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:var(--blue-light)"></i>HP</span>
+                        <span class="product-cat">Ordinateur Portable</span>
+                        <h3 class="product-title">HP Zbook 15 FireFly G7</h3>
+                        <p class="product-desc">Intel Core i7 de 10e génération, jusqu'à 64 Go de RAM et une carte graphique NVIDIA Quadro P520, écran antireflet de 15,6 pouces et une connectique complète avec Thunderbolt. <br>conception ultralégère (moins de 1,8 kg) offrant une vraie mobilité professionnelle. Elle garantit également des performances fluides pour le graphisme et une autonomie exceptionnelle pour le terrain.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20HP%20EliteBook%20840%20G10" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════
+                     LAPTOPS — DELL
+                     ═══════════════════════════════════════════ -->
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/dell-inspiron-15.jpg -->
+                <div class="product-card" data-category="laptops" data-brand="dell">
+                    <div class="product-img">
+                        <img src="images/PC/Dell-p1.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:#ffffff"></i>Dell</span>
+                        <span class="product-cat">Ordinateur Portable</span>
+                        <h3 class="product-title">Dell Latitude 7400 x360</h3>
+                        <p class="product-desc">Processeur Intel Core i5/i7, écran tactile 14" Full HD rotatif à 360°, jusqu'à 16 Go de RAM et SSD NVMe.Ports USB-A, Thunderbolt 3 (Type-C) et HDMI, le tout dans un châssis en aluminium pesant seulement 1,36 kg. <br>Conception 2-en-1 ultra-polyvalente et autonomie exceptionnelle idéale pour les professionnels en déplacement.Équipé d'une caméra infrarouge Windows Hello et d'un clavier rétroéclairé pour un confort d'utilisation optimal.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Dell%20Inspiron%2015" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/dell-latitude-5540.jpg -->
+                <div class="product-card" data-category="laptops" data-brand="dell">
+                    <div class="product-badge sub-badge">Pro</div>
+                    <div class="product-img">
+                        <img src="images/PC/Dell-p2.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:#ffffff"></i>Dell</span>
+                        <span class="product-cat">Ordinateur Portable</span>
+                        <h3 class="product-title">Dell Precision 5540</h3>
+                        <p class="product-desc">Processeur Intel Core i9 et carte graphique Nvidia Quadro pour des rendus fluides. Équipé de 16 Go de RAM DDR4 et d'un SSD ultra-rapide de 512 Go. <br>Conception portable ultra-fine et robuste, écran aux couleurs fidèles. Idéal pour les travaux d'ingénierie, de modélisation 3D et d'infographie.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Dell%20Latitude%205540" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="laptops" data-brand="dell">
+                    <div class="product-img">
+                        <img src="images/PC/Dell-p3.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:#ffffff"></i>Dell</span>
+                        <span class="product-cat">Ordinateur Portable</span>
+                        <h3 class="product-title">Dell Latitude 7420</h3>
+                        <p class="product-desc">Intel Core i5 ou i7 de 11e génération avec carte Intel Iris Xe, accompagné de 16 Go de RAM et d'un écran tactile Full HD de 14 pouces, Wi-Fi 6, des ports Thunderbolt 4. <br>Un design ultraportable ultra-léger t une conception robuste idéale pour les professionnels. Il offre des performances rapides et fluides ainsi qu'une sécurité avancée.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Dell%20Inspiron%2015" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════
+                     LAPTOPS — LENOVO
+                     ═══════════════════════════════════════════ -->
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/lenovo-thinkpad-e14.jpg -->
+                <div class="product-card" data-category="laptops" data-brand="lenovo">
+                    <div class="product-img">
+                        <img src="images/PC/Lenovo-p1.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:#E2231A"></i>Lenovo</span>
+                        <span class="product-cat">Ordinateur Portable</span>
+                        <h3 class="product-title">Lenovo ThinkPad T14s</h3>
+                        <p class="product-desc">Intel Core i7, de 16 Go de RAM et d’un SSD de 512 Go, ce PC portable assure une fluidité remarquable. Il intègre un écran de 14 pouces et tourne sous Windows. <br>modèle ultraléger offre une portabilité exceptionnelle sans compromettre sa robustesse. Il brille par ses excellentes performances et sa grande autonomie pour les professionnels nomades.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Lenovo%20ThinkPad%20E14" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="laptops" data-brand="lenovo">
+                    <div class="product-img">
+                        <img src="images/PC/Lenovo-p2.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:#E2231A"></i>Lenovo</span>
+                        <span class="product-cat">Ordinateur Portable</span>
+                        <h3 class="product-title">Lenovo X1 Yoga X360</h3>
+                        <p class="product-desc">Processeur Intel Core i7 avec 16 Go de RAM et SSD ultra-rapide de 512 Go.Écran tactile rotatif à 360° de 14 pouces au design convertible premium. <br>Ultra-polyvalent grâce à son format 2-en-1 et performances exceptionnelles pour le multitâche professionnel.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Lenovo%20ThinkPad%20E14" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/lenovo-ideapad-5.jpg -->
+                <div class="product-card" data-category="laptops" data-brand="lenovo">
+                    <div class="product-badge">Populaire</div>
+                    <div class="product-img">
+                        <img src="images/PC/Lenovo-p3.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:#E2231A"></i>Lenovo</span>
+                        <span class="product-cat">Ordinateur Portable</span>
+                        <h3 class="product-title">Lenovo ThinkPad X1 Carbon</h3>
+                        <p class="product-desc">Intel Core i7, épaulé par 16 Go de RAM et un stockage SSD ultra-rapide de 512 Go. Il dispose d'un écran de 14 pouces offrant une excellente qualité visuelle pour un confort quotidien. <br>Ultra-léger, robuste et doté d'une excellente autonomie, cet ultrabook est le compagnon idéal des professionnels nomades. Il se distingue également par son clavier ergonomique de pointe et sa connectivité complète.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Lenovo%20IdeaPad%205" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════
+                     DESKTOPS — HP
+                     ═══════════════════════════════════════════ -->
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/hp-elitedesk-800.jpg -->
+                <div class="product-card" data-category="desktops" data-brand="hp">
+                    <div class="product-img">
+                        <img src="images/PC/Hp-d1.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:var(--blue-light)"></i>HP</span>
+                        <span class="product-cat">Ordinateur de Bureau <br> ALL-IN-ONE</span>
+                        <h3 class="product-title">HP EliteOne 800 G3 <br>ALL-IN-ONE</h3>
+                        <p class="product-desc">Intel Core i5, Écran 24", boosté par 16 Go de RAM DDR4 pour un traitement fluide des tâches.Espace de stockage ultra-rapide de 512 Go SSD garantissant des démarrages et transferts de données quasi-instantanés. <br>Conception compacte et robuste (SFF) idéale pour optimiser l'espace de votre espace de travail.Connectique complète (USB-C, DisplayPort) et sécurité de niveau professionnel intégrée pour une productivité maximale.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20HP%20EliteDesk%20800%20G6" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/hp-prodesk-400-g7.jpg -->
+                <div class="product-card" data-category="desktops" data-brand="hp">
+                    <div class="product-badge">Top Vente</div>
+                    <div class="product-img">
+                        <img src="images/PC/Hp-d2.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:var(--blue-light)"></i>HP</span>
+                        <span class="product-cat">Ordinateur de Bureau</span>
+                        <h3 class="product-title">HP ProDesk 600 G3 MT</h3>
+                        <p class="product-desc">ntel Core i5, de 16 Go de RAM et d'un stockage SSD de 512 Go, il intègre une connectique complète (ports USB 3.1, DisplayPort). Ce modèle au format Microtour (MT) dispose aussi de larges possibilités d'évolution interne. <br>Il garantit une réactivité fulgurante au quotidien et un grand confort visuel grâce au moniteur de 24 pouces inclus. Son architecture évolutive et sa fiabilité en font un investissement durable et sécurisé.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20HP%20ProDesk%20400%20G7" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════
+                     DESKTOPS — DELL
+                     ═══════════════════════════════════════════ -->
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/dell-optiplex-7080.jpg -->
+                <div class="product-card" data-category="desktops" data-brand="dell">
+                    <div class="product-img">
+                        <img src="images/PC/Dell-d1.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:#ffffff"></i>Dell</span>
+                        <span class="product-cat">Ordinateur de Bureau</span>
+                        <h3 class="product-title">dell Optiplex 5040</h3>
+                        <p class="product-desc">Équipé d'un puissant processeur Intel Core i7, de 8 Go de RAM et d'un double espace de stockage (SSD 512 Go + HDD 500 Go), ce PC est livré prêt à l'emploi avec son écran 22". <br>Il offre une réactivité impressionnante, un espace de sauvegarde massif et un confort visuel idéal pour la bureautique intensive.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Dell%20OptiPlex%207080" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/dell-vostro-3910.jpg -->
+                <div class="product-card" data-category="desktops" data-brand="dell">
+                    <div class="product-img">
+                        <img src="images/PC/Dell-d2.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:#ffffff"></i>Dell</span>
+                        <span class="product-cat">Ordinateur de Bureau</span>
+                        <h3 class="product-title">Dell Optiplex 7460</h3>
+                        <p class="product-desc">Processeur Intel Core i7, 16 Go de RAM et un SSD ultra-rapide de 512 Go. Écran spacieux de 24 pouces offrant une résolution Full HD. <br> Conception tout-en-un moderne sans encombrement de câbles et performances multitâches exceptionnelles Amet AE. Rapidité d'exécution et confort visuel garantis pour les tâches quotidiennes et professionnelles.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Dell%20Vostro%203910" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════
+                     DESKTOPS — LENOVO
+                     ═══════════════════════════════════════════ -->
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/lenovo-thinkcentre-m75q.jpg -->
+                <div class="product-card" data-category="desktops" data-brand="lenovo">
+                    <div class="product-img">
+                        <img src="images/PC/Lenovo-d1.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:#E2231A"></i>Lenovo</span>
+                        <span class="product-cat">Ordinateur de Bureau</span>
+                        <h3 class="product-title">Lenovo P320 tiny</h3>
+                        <p class="product-desc">Propulsé par un processeur Intel Xeon performant avec 16 Go de mémoire vive et un stockage rapide SSD de 256 Go. Il intègre un écran de 22 pouces pour un poste de travail complet et prêt à l'emploi. <br>Il offre une puissance de calcul de niveau station de travail et une fiabilité exceptionnelle pour les tâches exigeantes. Son format compact et sa certification ISV garantissent une stabilité optimale pour vos logiciels métiers.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Lenovo%20ThinkCentre%20M75q" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/lenovo-ideacentre-510.jpg -->
+                <div class="product-card" data-category="desktops" data-brand="lenovo">
+                    <div class="product-img">
+                        <img src="images/PC/Lenovo-d2.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-circle" style="font-size:6px;color:#E2231A"></i>Lenovo</span>
+                        <span class="product-cat">Ordinateur de Bureau</span>
+                        <h3 class="product-title">Lenovo M920T Professionnel</h3>
+                        <p class="product-desc">Équipé d'un puissant processeur Intel Core i5, de 16 Go de mémoire RAM et d'un espace de stockage de 500 Go. Fourni avec un écran de 22 pouces, il offre une configuration complète prête à l'emploi. <br>Idéal pour un usage professionnel intensif grâce à sa fluidité multitâche remarquable.Son format tour garantit une excellente évolutivité et une très bonne dissipation thermique.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Lenovo%20IdeaCentre%20510" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════
+                     ACCESSOIRES
+                     ═══════════════════════════════════════════ -->
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/disque-dur-externe.jpg -->
+                <div class="product-card" data-category="accessoires" data-brand="imprimante-scanner">
+                    <div class="product-badge sub-badge">Top Vente</div>
+                    <div class="product-img">
+                        <img src="images/Acc/Hp.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-print"></i>hp</span>
+                        <span class="product-cat">Imprimante & Scanner</span>
+                        <h3 class="product-title">Gamme HP</h3>
+                        <p class="product-desc">(DeskJet, ENVY, OfficeJet & OfficeJet Pro, Smart Tank, LaserJet / LaserJet Pro, LaserJet Enterprise ) <br> Pour un usage bureautique quotidien ou des besoins professionnels avancés, elles offrent des solutions connectées et performantes adaptées à tous vos projets.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20l'imprimante%20HP" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="imprimante-scanner">
+                    <div class="product-img">
+                        <img src="images/Acc/Canon.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-print"></i> Canon</span>
+                        <span class="product-cat">Imprimante & Scanner</span>
+                        <h3 class="product-title">Gamme Canon</h3>
+                        <p class="product-desc">(PIXMA, PIXMA MegaTank, i-SENSYS, SELPHY & Zoemini, imageRUNNER) <br> Qualité d'image exceptionnelle et une excellente fiabilité au quotidien, une technologies de pointe pour imprimer, numériser et copier avec une précision remarquable.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20la%20Canon%20PIXMA" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="imprimante-scanner">
+                    <div class="product-img">
+                        <img src="images/Acc/Epson.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-print"></i> Epson</span>
+                        <span class="product-cat">Imprimante & Scanner</span>
+                        <h3 class="product-title">Gamme Epson</h3>
+                        <p class="product-desc">(EcoTank, Expression Home & Expression Premium, WorkForce et WorkForce Pro...) <br>Qualité d'image exceptionnelle, une solution économique et écologique idéale pour réduire considérablement vos coûts d'impression au quotidien</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20la%20Canon%20PIXMA" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="imprimante-scanner">
+                    <div class="product-img">
+                        <img src="images/Acc/brother.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-print"></i> Brother</span>
+                        <span class="product-cat">Imprimante & Scanner</span>
+                        <h3 class="product-title">Gamme Brother</h3>
+                        <p class="product-desc">Laser Monochrome(Série HL); Laser Couleur(Série DCP, MFC); Jet d'Encre(Série MFC); Étiqueteuses et Scanners Mobiles(Série QL & PT, Série ADS) <br>Fiabilité,robustesse et connectivité réseau avancée.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20la%20Canon%20PIXMA" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="imprimante-scanner">
+                    <div class="product-img">
+                        <img src="images/Acc/samsung.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-print"></i> Samsung</span>
+                        <span class="product-cat">Imprimante & Scanner</span>
+                        <h3 class="product-title">Gamme Samsung</h3>
+                        <p class="product-desc"> (Série ML, CLP, CLX & C, SCX & M) <br>Technologie laser innovante, offrant des impressions rapides et de haute précision. </p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20la%20Canon%20PIXMA" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="imprimante-scanner">
+                    <div class="product-img">
+                        <img src="images/Acc/Lexmark & Kyocera.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-print"></i> Lexmark & Kyocera </span>
+                        <span class="product-cat">Imprimante & Scanner</span>
+                        <h3 class="product-title">Gamme Lexmark & Kyocera</h3>
+                        <p class="product-desc">(Séries CS / CX, MS / MX) & (ECOSYS, TASKalfa) <br>Reconnues pour leur robustesse, impression haute performance et sécurisées.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20la%20Canon%20PIXMA" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="accessoires" data-brand="saisie-controle">
+                    <div class="product-img">
+                        <img src="images/Acc/clavier.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-keyboard"></i> Clavier</span>
+                        <span class="product-cat">Saisie & Contrôle</span>
+                        <h3 class="product-title">Clavier filaire - Clavier sans fil</h3>
+                        <p class="product-desc">Les claviers filaires offrent une connexion instantanée sans aucune latence ni besoin de recharge, parfaits pour le jeu compétitif et la bureautique intensive. <br> À l'inverse, les claviers sans fil garantissent un espace de travail épuré et une liberté de mouvement totale, idéaux pour les configurations modernes et nomades.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20pack%20clavier%20souris" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="saisie-controle">
+                    <div class="product-img">
+                        <img src="images/Acc/souris.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-computer-mouse"></i> Souris</span>
+                        <span class="product-cat">Saisie & Contrôle</span>
+                        <h3 class="product-title">Souris filaire - Souris sans fil</h3>
+                        <p class="product-desc">La souris filaire garantit une réactivité instantanée sans aucune contrainte de batterie, idéale pour le jeu ou la bureautique intensive. <br> À l'inverse, la souris sans fil offre une liberté de mouvement totale et un bureau épuré, parfaite pour les nomades et les postes de travail modernes.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20pack%20clavier%20souris" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="saisie-controle">
+                    <div class="product-img">
+                        <img src="images/Acc/pave.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-calculator"></i><i class="fas fa-tablet"></i> Pavé numérique-tactile indépendants</span>
+                        <span class="product-cat">Saisie & Contrôle</span>
+                        <h3 class="product-title">pavé tactile 2-en-1 & pavé numérique </h3>
+                        <p class="product-desc">Les pavés numériques et tactiles indépendants sont des accessoires informatiques très pratiques pour optimiser votre productivité. Que vous soyez un professionnel en déplacement ou un adepte des raccourcis, ces dispositifs externes se connectent facilement en USB ou en Bluetooth pour vous offrir un contrôle sur-mesure.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20pack%20clavier%20souris" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="accessoires" data-brand="affichage-multimedia">
+                    <div class="product-img">
+                        <img src="images/Acc/Ecran.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-desktop"></i> Écran</span>
+                        <span class="product-cat">Affichage & Multimédia</span>
+                        <h3 class="product-title">Moniteurs</h3>
+                        <p class="product-desc">(HP-Dell-Samsung-Asus-Lenovo ...)Boostez votre productivité avec notre sélection de moniteurs informatiques. Profitez d'une qualité d'image exceptionnelle, d'une ergonomie sur-mesure et d'un confort visuel optimal pour tous vos usages quotidiens ou professionnels.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Moniteur%20Dell%2024" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="affichage-multimedia">
+                    <div class="product-img">
+                        <img src="images/Acc/casque.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-headphones"></i>Audio</span>
+                        <span class="product-cat">Affichage & Multimédia</span>
+                        <h3 class="product-title">Casque audio & Ecouteurs</h3>
+                        <p class="product-desc">Optimisez votre confort acoustique et votre concentration grâce à notre sélection de casques et écouteurs. Que vous soyez au bureau ou en déplacement, découvrez des solutions audio performantes, idéales pour vos appels en visioconférence et une immersion totale dans vos tâches quotidiennes.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Moniteur%20Dell%2024" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="affichage-multimedia">
+                    <div class="product-img">
+                        <img src="images/Acc/micro.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-microphone"></i>micro</span>
+                        <span class="product-cat">Affichage & Multimédia</span>
+                        <h3 class="product-title">Microphones</h3>
+                        <p class="product-desc">Sublimez vos enregistrements grâce à notre sélection de microphones professionnels, conçue pour capturer chaque nuance de votre voix avec une clarté cristalline. Que ce soit pour le streaming, le podcasting ou le studio, trouvez le micro idéal qui transformera vos projets audio en véritables chefs-d'œuvre.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Moniteur%20Dell%2024" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="affichage-multimedia">
+                    <div class="product-img">
+                        <img src="images/Acc/webcam.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-camera"></i>Visuel</span>
+                        <span class="product-cat">Affichage & Multimédia</span>
+                        <h3 class="product-title">Webcams</h3>
+                        <p class="product-desc">Ils offrent une solution plug-and-play idéale pour améliorer la qualité de vos visioconférences et streams. Elles surpassent généralement les capteurs intégrés en proposant de meilleures résolutions, un autofocus performant et un rendu lumineux supérieur, le tout facilement orientable selon vos besoins.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Moniteur%20Dell%2024" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="affichage-multimedia">
+                    <div class="product-img">
+                        <img src="images/Acc/enceintes.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fa-solid fa-speaker-deck"></i>haut-parleurs</span>
+                        <span class="product-cat">Affichage & Multimédia</span>
+                        <h3 class="product-title">Enceintes Audio</h3>
+                        <p class="product-desc">Sublimez votre expérience multimédia avec nos enceintes audio pour PC. Profitez d'un son riche et enveloppant pour vos jeux, films et musiques, le tout dans un design compact qui s'intègre parfaitement à votre espace de travail.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20le%20Moniteur%20Dell%2024" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="accessoires" data-brand="stockage-connectivite">
+                    <div class="product-img">
+                        <img src="images/Acc/Disques durs externes.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-hdd"></i> Stockage</span>
+                        <span class="product-cat">Stockage & Connectivité</span>
+                        <h3 class="product-title">Disques Durs Externes</h3>
+                        <p class="product-desc">Allant de 256Go à 02To Interface USB 3.0 ultra-rapide. Protégez et transportez vos données d'entreprise en toute sécurité.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20le%20disque%20dur%20externe%201To%20est-il%20disponible%3F" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="stockage-connectivite">
+                    <div class="product-img">
+                        <img src="images/Acc/cle usb.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-hard-drive"></i>Stockage</span>
+                        <span class="product-cat">Stockage & Connectivité</span>
+                        <h3 class="product-title">Clés USB</h3>
+                        <p class="product-desc">Allant de 08Go à 128Go.Grâce à leur format compact et leur grande capacité, elles permettent de sauvegarder vos fichiers importants ou de créer des supports de démarrage en toute simplicité.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20le%20disque%20dur%20externe%201To%20est-il%20disponible%3F" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="stockage-connectivite">
+                    <div class="product-img">
+                        <img src="images/Acc/station.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fab fa-usb" aria-hidden="true"></i>Connectivite</span>
+                        <span class="product-cat">Stockage & Connectivité</span>
+                        <h3 class="product-title">Station d'accueil</h3>
+                        <p class="product-desc">Transformez votre espace de travail en un clin d'œil avec notre sélection de stations d'accueil. Profitez d'une connectivité instantanée pour tous vos périphériques et boostez votre productivité quotidienne.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20le%20disque%20dur%20externe%201To%20est-il%20disponible%3F" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="stockage-connectivite">
+                    <div class="product-img">
+                        <img src="images/Acc/cables.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fab fa-usb" aria-hidden="true"></i>Connectivite</span>
+                        <span class="product-cat">Stockage & Connectivité</span>
+                        <h3 class="product-title">Cables et adaptateurs</h3>
+                        <p class="product-desc">HDMI, DisplayPort, VGA, DVI, Ethernet, USB-C vers USB-A/HDMI/Ethernet, HDMI vers VGA, HDMI vers DisplayPort, Adaptateur USB vers Ethernet</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20le%20disque%20dur%20externe%201To%20est-il%20disponible%3F" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="product-card" data-category="accessoires" data-brand="energie-alimentation">
+                    <div class="product-img">
+                        <img src="images/Acc/chargeur.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fa-solid fa-plug"></i> Charge</span>
+                        <span class="product-cat">Énergie & Alimentation</span>
+                        <h3 class="product-title">Chargeurs de toute marque</h3>
+                        <p class="product-desc">Chargeurs (HP-Dell-Lenovo-Asus-Samsung etc) Choisissez un modèle certifié et adapté à la puissance requise pour protéger votre équipement contre les surtensions et optimiser ses performances au quotidien.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20les%20onduleurs" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="energie-alimentation">
+                    <div class="product-img">
+                        <img src="images/Acc/onduleurs.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-bolt"></i> Énergie</span>
+                        <span class="product-cat">Énergie & Alimentation</span>
+                        <h3 class="product-title">Onduleurs</h3>
+                        <p class="product-desc">Protection contre les surtensions et autonomie de batterie pour vos équipements réseau et serveurs.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20les%20onduleurs" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="energie-alimentation">
+                    <div class="product-img">
+                        <img src="images/Acc/power.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-battery-full"></i> Batterie </span>
+                        <span class="product-cat">Énergie & Alimentation</span>
+                        <h3 class="product-title">PowerBanks</h3>
+                        <p class="product-desc">Idéal pour vos appareils mobiles (smartphones, tablettes, PC portables) en déplacement. Des capacités adaptées à vos besoins et charges rapides</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20les%20onduleurs" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="energie-alimentation">
+                    <div class="product-img">
+                        <img src="images/Acc/multiprise.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-plug"></i> Prises </span>
+                        <span class="product-cat">Énergie & Alimentation</span>
+                        <h3 class="product-title">Multiprises</h3>
+                        <p class="product-desc">Indispensables pour centraliser vos équipements, les multiprises protègent vos appareils informatiques contre les surtensions. Pour une installation sécurisée, privilégiez les modèles équipés d'un parasurtenseur et d'un interrupteur.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20les%20onduleurs" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="product-card" data-category="accessoires" data-brand="divers">
+                    <div class="product-img">
+                        <img src="images/Acc/sacs.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-briefcase"></i> Transport</span>
+                        <span class="product-cat">Divers</span>
+                        <h3 class="product-title">Sacoches & Houses</h3>
+                        <p class="product-desc">Protégez efficacement votre matériel informatique grâce à notre sélection de sacoches pour ordinateurs. Alliant design moderne et conception renforcée, elles garantissent un transport sécurisé au quotidien contre les chocs et les rayures.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20les%20sacoches" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="divers">
+                    <div class="product-img">
+                        <img src="images/Acc/support.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-chalkboard-teacher"></i>Espace de travail</span>
+                        <span class="product-cat">Divers</span>
+                        <h3 class="product-title">Supports</h3>
+                        <p class="product-desc">Optimisez votre espace de travail et améliorez votre posture grâce à nos supports d'ordinateur ergonomiques. Conçus pour assurer une ventilation optimale, ils rehaussent votre écran et s'adaptent parfaitement à tous vos besoins en informatique.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20les%20sacoches" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="accessoires" data-brand="divers">
+                    <div class="product-img">
+                        <img src="images/Acc/protege.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-keyboard"></i>Clavier</span>
+                        <span class="product-cat">Divers</span>
+                        <h3 class="product-title">Protège-Clavier & autocolant Clavier</h3>
+                        <p class="product-desc">Optimisez la longévité de votre matériel avec nos protège-claviers transparents, conçus pour faire barrage aux liquides, à la poussière et à l'usure. Pour personnaliser ou adapter votre disposition, découvrez également nos autocollants pour clavier, la solution idéale pour retrouver un marquage net en un clin d'œil.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20infos%20sur%20les%20sacoches" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Acheter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ═══════════════════════════════════════════
+                     CONSOMMABLES
+                     ═══════════════════════════════════════════ -->
+
+                <!-- Remplacer src par le chemin de votre image, ex: images/cartouches-encre.jpg -->
+                <div class="product-card" data-category="consommables" data-brand="impression">
+                    <div class="product-img">
+                        <img src="images/Cons/cartouches.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-tint"></i> Encre</span>
+                        <span class="product-cat">Impression</span>
+                        <h3 class="product-title">Cartouches d'encre & Toners</h3>
+                        <p class="product-desc">Disponibles en noir et couleur pour toutes les grandes marques (HP, Canon, Epson, Brother). Optimisez vos impressions, des textes nets et des couleurs éclatantes pour toutes vos imprimantes, au meilleur prix</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20cherche%20des%20cartouches/toners" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Commander
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="consommables" data-brand="impression">
+                    <div class="product-img">
+                        <img src="images/Cons/tambours.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-cogs"></i> Pièces</span>
+                        <span class="product-cat">Impression</span>
+                        <h3 class="product-title">Tambours d'imagerie</h3>
+                        <p class="product-desc">Tambours d'imagerie disponible pour toutes les grandes marques (HP, Canon, Epson, Brother).Un cylindre en parfait état garantit une qualité d'impression irréprochable et prolonge la durée de vie de votre imprimante. Découvrez notre sélection de tambours neufs pour des textes nets et des images éclatantes ! </p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20cherche%20des%20tambours/tetes%20d'impression" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Commander
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="consommables" data-brand="impression">
+                    <div class="product-img">
+                        <img src="images/Cons/rubans encreurs.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-cogs"></i> Pièces</span>
+                        <span class="product-cat">Impression</span>
+                        <h3 class="product-title">Rubans encreurs</h3>
+                        <p class="product-desc"> Optimisez la qualité de vos impressions avec notre sélection de rubans encreurs. Conçus pour garantir des textes nets et une haute résistance, nos consommables vous assurent des performances fiables et durables pour toutes vos imprimantes matricielles et transfert thermique </p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20cherche%20des%20tambours/tetes%20d'impression" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Commander
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="consommables" data-brand="impression">
+                    <div class="product-img">
+                        <img src="images/Cons/tete dimpression.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-cogs"></i> Pièces</span>
+                        <span class="product-cat">Impression</span>
+                        <h3 class="product-title">têtes d'impression</h3>
+                        <p class="product-desc">Optimisez la qualité de vos impressions grâce à nos têtes d'impression de haute précision. Conçues pour garantir une netteté exceptionnelle et des couleurs éclatantes, elles assurent la longévité de votre équipement.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20cherche%20des%20tambours/tetes%20d'impression" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Commander
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="consommables" data-brand="papiers-supports">
+                    <div class="product-badge">Top Vente</div>
+                    <div class="product-img">
+                        <img src="images/Cons/rames.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-copy"></i> Papier</span>
+                        <span class="product-cat">Papiers & Supports</span>
+                        <h3 class="product-title">Rames de Papier A4 & A3</h3>
+                        <p class="product-desc">Papier extra-blanc 80g/m² idéal pour les impressions bureautiques quotidiennes et les photocopieurs, vendu en rames ou en cartons.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20commander%20des%20rames%20de%20papier" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Commander
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="consommables" data-brand="papiers-supports">
+                    <div class="product-img">
+                        <img src="images/Cons/papier thermique.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-receipt"></i> Caisse</span>
+                        <span class="product-cat">Papiers & Supports</span>
+                        <h3 class="product-title">Rouleaux Papier Thermique</h3>
+                        <p class="product-desc">Rouleaux pour imprimantes thermiques, TPE et caisses enregistreuses. Excellente lisibilité et durabilité de l'impression.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20souhaite%20des%20rouleaux%20de%20papier%20thermique" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Commander
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="consommables" data-brand="composants">
+                    <div class="product-img">
+                        <img src="images/Cons/barrette.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-microchip"></i> Mémoire</span>
+                        <span class="product-cat">Composants</span>
+                        <h3 class="product-title">Barrettes de RAM (PC & Laptop)</h3>
+                        <p class="product-desc">Mettez à niveau vos ordinateurs avec nos modules de mémoire DDR3, DDR4 et DDR5 pour ordinateurs portables et de bureau.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20cherche%20des%20barrettes%20de%20RAM" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Commander
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="consommables" data-brand="composants">
+                    <div class="product-img">
+                        <img src="images/Cons/bat-ecr-clav.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-tools"></i> Rechange</span>
+                        <span class="product-cat">Composants</span>
+                        <h3 class="product-title">Batteries, Claviers & Écrans</h3>
+                        <p class="product-desc">Pièces de rechange essentielles pour ordinateurs portables. Retrouvez l'autonomie et l'ergonomie de vos machines d'origine.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20je%20cherche%20des%20pieces%20de%20rechange%20laptop" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Commander
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="consommables" data-brand="composants">
+                    <div class="product-img">
+                        <img src="images/Cons/piles.png" alt="">
+                    </div>
+                    <div class="product-info">
+                        <span class="brand-tag"><i class="fas fa-battery-full"></i> Énergie</span>
+                        <span class="product-cat">Composants</span>
+                        <h3 class="product-title">Piles CMOS</h3>
+                        <p class="product-desc">Piles bouton au lithium pour sauvegarder les paramètres du BIOS et l'horloge de vos cartes mères.</p>
+                        <div class="product-footer">
+                            <span class="price">Prix sur demande</span>
+                            <a href="https://wa.me/22661198912?text=Bonjour,%20avez-vous%20des%20piles%20CMOS%3F" target="_blank" class="buy-btn">
+                                <i class="fab fa-whatsapp"></i> Commander
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- État vide -->
+                <div class="empty-state" id="empty-state">
+                    <i class="fas fa-box-open"></i>
+                    <p>Aucun produit trouvé pour cette sélection.<br>Contactez-nous pour vérifier la disponibilité.</p>
+                </div>
+
+            </div><!-- /.products-grid -->
+        </main>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="CE-TECH" style="height:38px;width:auto;">
+                    <span class="footer-brand-name">CE<span>-TECH</span></span>
+                </div>
+                <p>Services Informatiques — Vente & Maintenance.</p>
+                <p><em>"Notre métier, mettre en valeur le vôtre."</em></p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Nos Services</a></li>
+                    <li><a href="apropos.html">À Propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Nous joindre</h4>
+                <p><i class="fas fa-phone-alt"></i> (+226) 66-56-99-26</p>
+                <p><i class="fab fa-whatsapp"></i> (+226) 61-19-89-12</p>
+                <p><i class="fas fa-envelope"></i> ce.tech.services01@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CE-TECH. Tous droits réservés.</p>
+            <div class="footer-socials">
+                <a href="https://wa.me/22661198912" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:ce.tech.services01@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.facebook.com/share/1Cn6h9r4jo/"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
